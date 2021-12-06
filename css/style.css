@@ -1,0 +1,192 @@
+
+/* ADD YOUR STYLES HERE */
+body{
+    background-color: #B4D4F5;
+    fill: #123456;
+
+}
+
+h1{
+    text-align: center;
+    /*color: white;*/
+}
+
+h2{
+    text-align: center;
+    /*color: white;*/
+}
+
+h3{
+    text-align: center;
+    /*color: white;*/
+}
+
+#prevReduc4 .reducPct {
+    font-weight: bold;
+    font-size: 15px;
+}
+#prevReduc5 .reducPct {
+    font-weight: bold;
+    font-size: 15px;
+}
+#prevReduc6 .reducPct {
+    font-weight: bold;
+    font-size: 15px;
+}
+#prevReduc7 .reducPct {
+    font-weight: bold;
+    font-size: 15px;
+}#prevReduc8 .reducPct {
+     font-weight: bold;
+     font-size: 15px;
+ }
+
+
+.age-breakdown-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bar-instruction {
+    font-size: 13px;
+    font-weight: lighter;
+    padding-left: 40px;
+}
+
+.bar-y-label {
+    font-size: 13px;
+}
+
+.x-axis text {
+    font-size: 13px;
+}
+
+text{
+    font-size: 10px;
+}
+
+.section {
+    margin: 20px 20px 0px 20px;
+}
+
+.drag-instruc {
+    font-weight: lighter;
+}
+
+.prevReduc {
+    margin-left: 75px;
+}
+
+.reducPct {
+    font-size: 14px;
+    text-anchor: middle;
+}
+
+.groupPct {
+    font-size: 14px;
+    text-anchor: middle;
+}
+
+.prevReducTitle {
+    font-style: italic;
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.priv-count-text {
+    text-align: center;
+}
+
+.form-control {
+    margin-left: 10px;
+}
+
+.slide-text {
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 0px;
+}
+
+.comp-title {
+    text-align: center;
+    font-size: 13px;
+    /*font-weight: lighter;*/
+    margin-bottom: 15px;
+}
+
+.slide-text-3 {
+    margin-top: 0px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 18px;
+}
+
+.effect-text {
+    font-size: 18px;
+    text-align: center;
+}
+
+.slide-text-2 {
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.intro {
+    margin-top: 0;
+}
+
+.border {
+    background-color: rgba(255,255,255, 0.70);
+    padding: 1vh;
+    border-radius: 10px;
+}
+
+.background-vax {
+    background-image: url("../img/vaccine-tracker-promo.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro {
+    text-shadow: 2px 2px black
+}
+
+#header {
+    /*background-color: slateblue;*/
+    text-align:center;
+    color: white ;
+}
+
+#names {
+    color: white;
+}
+
+#title {
+    margin: 0px 0px 0px 0px;
+}
+
+
+html,
+body,
+#fullpage,
+.section,
+.slide,
+.fp-tableCell
+{
+    height: 100%
+}
+
+
+
+.section-title {
+
+    width: 100%;
+    position: absolute;
+    top: 5vh;
+}
+
+.scatterDescription {
+    white-space: pre-wrap;
+    /*mso-line-spacing: "4";*/
+}

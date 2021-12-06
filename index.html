@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CS171 - Final Project</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!--	<link rel="stylesheet" type="text/css" href="css/fullpage.css">-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="fullpage" >
+
+<!--Opening Page-->
+	<div class="section background-vax" id="title">
+		<div class="container-fluid">
+			<div class="row justify-content-center intro">
+				<h1 id="header">Simpson's Paradox in Vaccine Effectiveness Estimation</h1>
+			</div>
+			<div class="row justify-content-center intro">
+				<h4 id="names">Ahmed Abukar, Max Cembalest, and Mark Penrod<br><br></h4>
+			</div>
+
+			<div class="row justify-content-center slide-text border">
+				Encouraging COVID-19 vaccination is one of the most important and urgent public health pursuits in the current day.
+				The process of measuring Vaccine Effectiveness (VE) is somewhat technical, and when important features such as age are not taken into account, VE can be misleading.
+				This work is intended to walk through how VE is measured and help promote clear and accurate messaging regarding waning efficacy.
+
+			</div>
+		</div>
+	</div>
+
+<!--Intro Page: Vaccine Effectiveness-->
+	<div class="section">
+		<div class="container-fluid">
+
+<!--			Title-->
+			<div class="section-title">
+				<h1>What is Vaccine Effectiveness? </h1>
+			</div>
+
+<!--			Description-->
+			<div class="row justify-content-center">
+				<div class="col-10">
+					<div class="row justify-content-center slide-text-2 border">
+							Vaccine effectiveness (VE) measures the proportionate reduction between an unvaccinated and vaccinated cohort.
+<!--							VE is measured by calculating the risk of disease among vaccinated and unvaccinated persons and determining the percentage reduction in risk of disease among the two groups.-->
+							Precisely, effectiveness is measured as the difference in risk (prevalence) between the two groups divided by the risk of the baseline, unvaccinated group.</p>
+					</div>
+				</div>
+			</div>
+
+<!--			Prevalence Reduction-->
+			<div   class="col">
+				<div   class="row justify-content-center" style="text-align: center">
+					<p class="prevReducTitle">Prevalence reduction from New England Journal of Medicine (NEJM) <br>
+				</div>
+				<div   class="row justify-content-center">
+					<div id="prevReduc1"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--Reusable drawing of an arrow-->
+	<svg xmlns="http://www.w3.org/2000/svg">
+		<defs>
+			<marker id="arrowhead" markerWidth="4" markerHeight="4"
+					refX="0" refY="2" orient="auto" fill="black">
+				<polygon points="0 0, 4 2, 0 4" />
+			</marker>
+		</defs>
+	</svg>
+
+<!--Compare two datasets-->
+	<div class="section s2">
+		<div class="container-fluid">
+
+			<!--			Title-->
+			<div class="section-title">
+				<h3>To further examine vaccine effectiveness, we consider two data sources</h3>
+			</div>
+
+
+			<div class="row justify-content-center" style="margin-top: 100px;">
+				<!--			Prevalence Reduction-->
+				<div   class="col">
+					<div   class="row justify-content-center">
+						<p class="prevReducTitle">New England Journal of Medicine <br>
+					</div>
+					<div class="row prevReduc">
+						<div id="prevReduc2" ></div>
+					</div>
+				</div>
+
+				<!--			Prevalence Reduction-->
+				<div   class="col">
+					<div   class="row justify-content-center">
+						<p class="prevReducTitle">Israeli Ministry of Health<br>
+					</div>
+					<div   class="row prevReduc">
+						<div id="prevReduc3" ></div>
+					</div>
+				</div>
+
+			</div>
+			<!--			Description-->
+			<div class="row justify-content-center">
+				<div class="col-10 slide-text-3 border">
+					<p> Among these two sources, we see a similar level of vaccine effectiveness though the prevalence is much higher among the NEJM data.
+						This comes down to two factors:
+						<ul>
+							<li>The population NEJM of medicine data is composed of front-line healthcare workers</li>
+							<li>The Israeli data counts <i>severe</i> cases, where NEJM measures cases regardless of the severity</li>
+						</ul>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+<!--Question: Is There Waning Vaccine Effectiveness?-->
+	<div class="section s2">
+		<div class="container-fluid">
+
+			<div class="row justify-content-center">
+				<div class="col-10">
+					<div class="row justify-content-center slide-text border">
+						<h2>How effective really are the vaccines?</h2>
+						<p class="effect-text"> Though we do see a reduction between the groups, the effectiveness is in the mid-60s which doesn't seem great.
+							However, when we break down by age we observe a strange phenomenon...
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+<!--Answer: No waning efficacy if we look at one age group at a time!-->
+	<div class="section s2">
+		<div class="container-fluid">
+
+			<!--			Title-->
+			<div class="section-title">
+				<h1>Efficacy still looks strong within each age group! </h1>
+			</div>
+
+
+			<div   class="row justify-content-center">
+				<div class="col-5">
+					<div   class="row justify-content-center">
+						<p><i>Prevalence Reduction for ages < 50 (Israeli Data)</i><br>
+					</div>
+					<div id="prevReduc5" class = "col-xs-7.5 col-sm-4 "></div>
+				</div>
+				<div class="col-5">
+					<div   class="row justify-content-center">
+						<p><i>Prevalence Reduction for ages 50+ (Israeli Data)</i> <br>
+					</div>
+					<div id="prevReduc6" class = "col-xs-7.5 col-sm-4 "></div>
+				</div>
+			</div>
+
+			<div   class="row justify-content-center border slide-text-3 ">
+				<p> This is a prime example of <b>Simpson's Paradox</b>, a phenomenon in probability and statistics in which a trend appears in several different groups of data but disappears or reverses when these groups are combined.
+					Simpson's Paradox is non-intuitive and can be dangerously misleading in high-stakes scenarios.
+					But to further complicate matters, Simpson's paradox does not always appear in data intended to measure the same effect.
+				</p>
+			</div>
+
+
+		</div>
+
+	</div>
+
+<!--Question: Why do the two datasets act differently-->
+	<div class="section s2">
+		<div class="container-fluid">
+
+			<!--			Title-->
+			<div class="section-title">
+				<h3 style="margin-left: 400px; margin-right: 400px;">
+					For example, within the NEJM data, effectiveness remains consistent across age groups! </h3>
+			</div>
+
+			<!--			Prevalence Reduction-->
+			<div   class="row justify-content-center" style="margin-top: 50px;">
+				<div class="col-5 border">
+					<div id="barChart" class = "col-xs-7.5 col-sm-4  "></div>
+					<div class="row">
+						<g transform="translate(50,20)">
+							<text class="bar-instruction">*Select a bar to see vaccine effectiveness by age group</text>
+						</g>
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="row justify-content-center">
+						Grouping<text class="age-breakdown-title">:  All ages</text>
+					</div>
+					<div id="prevReduc7" class = "col-xs-7.5 col-sm-4 "></div>
+					<p class="comp-title"> New England Journal of Medicine</p>
+					<div id="prevReduc8" class = "col-xs-7.5 col-sm-4 "></div>
+					<p class="comp-title"> Israeli Data </p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!--Scatter-->
+	<div class="section s2">
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<p class="drag-instruc"> (drag scatterplot, click pie charts, or use dropdown to change perspective)</p>
+			</div>
+			<div class="row justify-content-center">
+				<h2 class="scatterTitle" style="margin-bottom: 20px;"></h2>
+			</div>
+			<!--			<div class="row justify-content-center">-->
+			<!--				<h5 class="scatterDate"></h5>-->
+			<!--			</div>-->
+			<div class="row scatter-top-line">
+
+				<form class="col-2">
+					<form class="form-inline">
+						<div class="form-group">
+
+							<select class="form-control" id="time-group">
+								<option value="0">Aug 15</option>
+								<option value="1">Sep 2</option>
+								<option value="2">Sep 20</option>
+								<option value="3">Nov 9</option>
+							</select>
+						</div>
+					</form>
+				</form>
+
+				<form class="col-3">
+					<div class="row">
+						<form class="form-inline">
+							<div class="form-group">
+
+								<select class="form-control" id="perspective-group">
+									<option value="2">Risk by Age and Vax Status</option>
+									<option value="0">Risk by Vax Status</option>
+									<option value="1">Risk by Age</option>
+
+								</select>
+							</div>
+						</form>
+					</div>
+					<div class="row border">
+						<!--						<h7 class="scatterDescription"></h7>-->
+						<p>
+							We can partially overcome this confusion in Simpson's Paradox by controlling for both age and<br>
+							vaccination at once. These <a href='https://en.wikipedia.org/wiki/Marginal_distribution'>marginal distributions</a> show how the risk reduction may be quite pronounced<br>
+							when we break down by age, but that effect is masked when we only consider vaccination status.
+
+						</p>
+					</div>
+				</form>
+			</div>
+
+
+
+
+
+			<div class="row justify-content-center">
+
+				<div class="col">
+					<div class="container-fluid" style="margin-top: 10px;">
+						<div class="row justify-content-center border" id="myScatterDemo">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="row-3 justify-content-center">
+						<br>
+						# of <h7 style="color: #E04404; font-weight: bold">Positive</h7> and
+						<h7 style="color: #1B8B91; font-weight: bold">Negative</h7> Tests
+						by Vaccination Status and Age Group
+						<form class="form-inline">
+							<div class="form-group">
+
+								<select class="form-control" id="Vacc">
+									<option value="vax">Vaccinated</option>
+									<option value="unvax">Unvaccinated</option>
+								</select>
+
+								<div id='vaxPie' class="row justify-content-center">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="row-3">
+
+						<form class="form-inline">
+							<div class="form-group">
+
+								<select class="form-control" id="Age-group">
+									<option value="twelve">12-15</option>
+									<option value="sixteen">16-19</option>
+									<option value="twenty">20-29</option>
+									<option value="thirty">30-39</option>
+									<option value="forty">40-49</option>
+									<option value="fifty">50-59</option>
+									<option value="sixty">60-69</option>
+									<option value="seventy">70-79</option>
+									<option value="eighty">80-89</option>
+									<option value="ninety">90+</option>
+								</select>
+
+								<div id='agePie' class="row justify-content-center">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Closing statement-->
+	<div class="section s2">
+		<div class="container-fluid">
+
+			<div class="row justify-content-center">
+				<div class="col-10">
+					<div class="row justify-content-center slide-text border">
+						<h3>What do we get from understanding<br> Simpson's Paradox?</h3>
+						<p class="effect-text"> We've learned that Simpson's Paradox is an unintuitive, tricky phenomenon
+							in statistics that can significantly change the narrative we glean from our data analysis.
+							For high impact scenarios, like the COVID-19 pandemic, this can sway public health efforts that
+							impact the lives of people all over the globe. The presence of phenomena like Simpson's Paradox
+							necessitate that we take a nuanced approach to statistical analysis and maintain healthy skepticism
+							of the narratives we are offered.
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+<!--Data Privacy-->
+	<div class="section ">
+		<div class="container-fluid">
+			<div class="section-title">
+				<h1>Appendix: Data Privacy</h1>
+			</div>
+			<div class="row justify-content-center" style="margin-top:20px">
+				<div class="col-4">
+					<div class="row justify-content-center border" style="padding-right:10px">
+						<p>Since age is such an important confounding variable, why is it not widely reported in this data?</p>
+						<p>The answer is the protection of personally-identifying information. Age is one identifier that, when combined with other bits of personal information, can effectively <b>de-anonymize</b> otherwise anonymous data. This phenomenon is particularly pernicious in the context of highly-sensitive data, like medical records.
+						As such, there is an inherent tradeoff between collecting accurate information and preserving stakeholder privacy.</p>
+						<p>The visualization on the right shows the total population of the Adult Income Dataset, a benchmark dataset in data privacy literature containing data from the 1994 Census Database. Notice how the combination of even just a few features can dramatically reduce the number of individuals who match that description in the data.</p>
+					</div>
+				</div>
+				<div class="col-4">
+					<form class="form-inline">
+						<div class="form-group">
+							<select class="form-control" id="Age">
+								<option value="all-ages">All Ages</option>
+								<option value="15-30">15 - 30</option>
+								<option value="31-45">31 - 45</option>
+								<option value="46-60">46 - 60</option>
+								<option value="61-75">61 - 75</option>
+							</select>
+							<select class="form-control" id="Race">
+								<option value="all-races">All Races</option>
+								<option value="Black">Black</option>
+								<option value="White">White</option>
+								<option value="Asian-Pac-Islander">Asian/Pacific Islander</option>
+								<option value="Amer-Indian-Eskimo">Native American</option>
+								<option value="Other">Other</option>
+							</select>
+							<select class="form-control" id="Sex">
+								<option value="all-sexes">All Sexes</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+
+
+							<!-- Activity IV -->
+							<!--<button type="button" class="btn btn-link" id="change-sorting"><i class="glyphicon glyphicon-sort"></i> Sort</button>-->
+						</div>
+					</form>
+					<div class="row justify-content-center" id="priv-viz">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.extensions.min.js" integrity="sha512-v0jjVvFpZqb1BcXhgLbaBDRKwZ09IpWFZL5NHTNbW9MlSjhZihkxEz2uNeMGd6HuK1qnSEL6JdyTr24ZHlgKow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script>
+		new fullpage('#fullpage', {
+			//options here
+			autoScrolling:true,
+			navigation: true,
+			navigationPosition: 'right',
+		});
+	</script>
+
+	<!-- embedding JS libraries -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!-- d3 -->
+	<script src="https://d3js.org/d3.v6.min.js"></script>
+
+	<!-- 3d -->
+	<script src="https://unpkg.com/d3-3d/build/d3-3d.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>/
+
+<!--	our javacsript code-->
+	<script src="js/prevalenceReduction.js"></script>
+	<script src="js/newScatter.js"></script>
+	<script src="js/privacyCircle.js"></script>
+	<script src="js/barchart.js"></script>
+	<script src="js/piechart.js"></script>
+	<script src="js/main.js"></script>
+</div>
+</body>
+</html>

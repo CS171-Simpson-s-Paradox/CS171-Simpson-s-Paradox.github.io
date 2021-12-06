@@ -1,0 +1,4 @@
+,% Pop,# Unvaxed,# Double Dose,% Unvaxed,% Double Dose,# Serious Cases Unvaxed,# Serious Cases Double Dose,# Serious Cases per 100k Unvaxed,# Serious Cases per 100k Double Dose,Efficacy,Name
+0,.99,?,?,?,?,?,?,?,?,All ages
+1,.77,?,?,?,?,?,?,?,?,<50
+2,.22,?,?,?,?,?,?,?,?,>= 50
